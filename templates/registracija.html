@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="DWA Projekt">
+  <meta name="author" content="Neven Pešut">
+
+  <title>Koliko trošim</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="/static/css/freelancer.min.css" rel="stylesheet">
+
+  <link href="/static/bootstrap/css/main.css" rel="stylesheet">
+  <style>
+      #page-top{
+          padding-top: 5%;
+      }
+  </style>
+</head>
+
+<body id="page-top">
+
+  
+   <center>
+       <form action="{{url_for('korisnici')}}" method="POST">
+           <table>
+               <tr>
+                   <th>Unesite ime: </th>
+                   <td><input type="text" name="Ime"></td>
+               </tr>
+               <tr>
+                    <th>Unesite prezime: </th>
+                    <td><input type="text" name="Prezime"></td>
+                </tr>
+                <tr>
+                    <th>Unesite adresu: </th>
+                    <td><input type="text" name="Adresa"></td>
+                </tr>
+                <tr>
+                    <th>Unesite korisničko ime: </th>
+                    <td><input type="text" name="Username"></td>
+                </tr>
+                 <tr>
+                    <th>Unesite lozinku: </th>
+                    <td><input type="password" name="Password"></td>
+                </tr>
+           </table>
+                      
+           <button type="submit" style="margin-top: 2.5%">Registracija</button>
+       </form>
+   </center>
+   
+
+</body>
+
+</html>

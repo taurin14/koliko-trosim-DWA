@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="DWA Projekt">
+  <meta name="author" content="Neven Pešut">
+
+  <title>Koliko trošim</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+
+  <style>
+      #page-top{
+          margin: 0;
+          padding: 0;
+
+      }
+  </style>
+</head>
+
+<body id="page-top">
+
+    <div>
+        <h4>Korisnik: </h4>
+        <i>{{ korisnik[0].Ime }} {{ korisnik[0].Prezime }}</i>
+        <a href="{{url_for('home')}}"><button>Odjavi se</button></a>
+    </div>
+    <center>
+        <a href="{{url_for('izvjesca', id=korisnik[0].id)}}"><button>Dodaj Prihod/Trošak</button></a>
+
+           
+            <table class="trosak">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Iznos</th>
+                    <th>Opis</th>
+                </tr>
+                {% for t in troskovi %}
+                <tr>
+                    <td>{{t.naziv}}</td>
+                    <td>{{t.iznos}}</td>
+                    <td>{{t.opis}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+
+            <table class="prihod">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Iznos</th>
+                    <th>Opis</th>
+                </tr>
+                <tr>
+                    {% for p in prihodi %}
+                    <tr>
+                        <td>{{p.naziv}}</td>
+                        <td>{{p.iznos}}</td>
+                        <td>{{p.opis}}</td>
+                    </tr>
+                    {%endfor%}
+                </tr>
+            </table>
+
+            <table class="izvjesce">
+                    <tr>
+                      <th>Ukupni prohod</th>
+                      <th>Ukupni trosak</th>
+                      <th>Ukupno</th>
+                    </tr>
+                    {% for i in izvjesce %}
+                    <tr>
+                        <td>{{i.ukupni_prihod}}</td>
+                        <td>{{i.ukupno_trosak}}</td>
+                        <td>{{i.ukupno_kraj}}</td>
+                    </tr>
+                    {%endfor%}
+            </table>
+    </center>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
